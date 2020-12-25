@@ -157,16 +157,16 @@ def draw_board(surf,pulse1,pulse2,lw):
 	for xy in lines:
 		pass
 		pygame.draw.line(surf,pulse1,
-			(lines[xy][0] * scale,lines[xy][1] * scale),
-			(lines[xy][2] * scale,lines[xy][3] * scale),
+			(int(lines[xy][0] * scale),int(lines[xy][1] * scale)),
+			(int(lines[xy][2] * scale),int(lines[xy][3] * scale)),
 			lw
 		)
 
 	# placing dots last so they look like they are "on top"
 	for xy in dots:
 		pygame.draw.circle(surf, pulse2, (
-				dots[xy][0] * scale, 
-				dots[xy][1] * scale
+				int(dots[xy][0] * scale), 
+				int(dots[xy][1] * scale)
 				), 
 			lw*2, 0
 		)
